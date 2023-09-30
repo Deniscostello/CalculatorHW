@@ -17,13 +17,21 @@ public class CalculatorController {
             case "subtract":
                 result = num1-num2;
                 break;
+            case "divide":
+                if(num2==0){
+                    throw new IllegalArgumentException("Error: Cannot divide by 0");
+                }
+                result=num1/num2;
+                break;
+            case "multiply":
+                result=num1*num2;
+                break;
             default:
-                throw new IllegalArgumentException("Invalid operation");
+                throw new IllegalArgumentException("Error: Invalid operation");
 
         }
         CalculatorObj object = new CalculatorObj(num1, num2, result, operation);
         return object;
-
     }
 
     public class CalculatorObj{
