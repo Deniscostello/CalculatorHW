@@ -30,13 +30,11 @@ public class CalculatorController {
                 throw new IllegalArgumentException("Error: Invalid operation");
 
         }
-        CalculatorObj object = new CalculatorObj(num1, num2, result, operation);
-        return object;
+        CalculatorObj Calobject = new CalculatorObj(result, operation);
+        return Calobject;
     }
 
     public class CalculatorObj{
-        private int num1;
-        private int num2;
 
         public int getResult() {
             return result;
@@ -48,22 +46,6 @@ public class CalculatorController {
 
         private int result;
 
-        public int getNum1() {
-            return num1;
-        }
-
-        public void setNum1(int num1) {
-            this.num1 = num1;
-        }
-
-        public int getNum2() {
-            return num2;
-        }
-
-        public void setNum2(int num2) {
-            this.num2 = num2;
-        }
-
         public String getOperation() {
             return operation;
         }
@@ -73,9 +55,7 @@ public class CalculatorController {
         }
 
         private String operation;
-        public CalculatorObj(int num1, int num2, int result, String operation){
-            this.num1=num1;
-            this.num2=num2;
+        public CalculatorObj(int result, String operation){
             this.result=result;
             this.operation=operation;
         }
